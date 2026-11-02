@@ -1,3 +1,10 @@
+#Name = Mantosh Yadav
+#email = mantosh0180@gmail.com 
+#erp = Ru-26-02950
+#section = B5
+#Ps no. = 31
+
+
 """
 PS No. 31 - Population Data Visualizer
 Run: python population_visualizer.py
@@ -12,7 +19,7 @@ import matplotlib.pyplot as plt
 CSV_FILE = Path(__file__).with_name("population.csv")
 
 
-def load_and_clean_data(file_path=CSV_FILE):
+def load_and_clean_data(file_path=CSV_FILE):   
     """Load CSV data, validate rows, and remove duplicate city-year entries."""
     try:
         raw = pd.read_csv(file_path)
@@ -71,6 +78,8 @@ def load_and_clean_data(file_path=CSV_FILE):
     print(f"Valid rows: {len(clean)}")
     return clean
 
+# Purpose: Reads the CSV file, validates required columns and values, removes invalid or duplicate records, and returns cleaned population data ready for analysis.
+
 
 def calculate_city_growth(data):
     """Calculate growth from each city's earliest to latest available year."""
@@ -98,6 +107,8 @@ def calculate_city_growth(data):
 
     return pd.DataFrame(results)
 
+# Purpose: Compares each city's earliest and latest recorded population values to calculate percentage growth for the full period.
+
 
 def show_summary(data):
     """Display total population, largest city and fastest-growing city."""
@@ -119,6 +130,8 @@ def show_summary(data):
     else:
         fastest = growth.loc[growth["Growth (%)"].idxmax()]
         print(f"Fastest growing: {fastest['City']} (+{fastest['Growth (%)']:.2f}%)")
+
+# Purpose: Prints the total population, the largest city in the newest year, and the city with the strongest growth trend.
 
 
 def show_growth_and_charts(data):
@@ -164,6 +177,8 @@ def show_growth_and_charts(data):
     print("\nCharts saved as population_growth.png and population_trend.png.")
     plt.show()
 
+# Purpose: Creates visual summaries of city growth by generating a bar chart and a multi-line population trend chart for each city.
+
 
 def main():
     print("=" * 48)
@@ -189,6 +204,8 @@ def main():
             break
         else:
             print("Invalid choice. Please enter 1, 2, or 3.")
+
+# Purpose: Runs the menu-driven program, loads the cleaned data, and lets the user choose between summary and chart-based analysis.
 
 
 if __name__ == "__main__":
