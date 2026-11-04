@@ -35,3 +35,9 @@ growth as `(latest population - earliest population) / earliest population * 100
   `City,Year,Population` then `Raipur,2020,1000000`, `Durg,2020,abc`,
   `Bhilai,2020,-500`.
 - Restore the original CSV to test Case 1 and Case 4.
+
+
+Project Mentor
+Mentored by: Mr. Satyaprakash Sethy
+GitHub: @SATYAPRAKASHSETHY
+*Role:* Python Mentor / Technical Guide
